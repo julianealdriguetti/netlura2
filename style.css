@@ -1,0 +1,210 @@
+body {
+    background: #141414;
+    /* Define a cor de fundo da página */
+    color: #fff;
+    /* Define a cor do texto principal */
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    /* Define a fonte usada no site */
+    margin: 0;
+    /* Remove a margem padrão do body */
+    min-height: 100vh;
+    /* Garante que o body ocupe pelo menos toda a altura da tela */
+}
+
+main {
+    display: flex;
+    /* Usa flexbox para layout */
+    flex-direction: column;
+    /* Organiza os elementos em coluna */
+    align-items: center;
+    /* Centraliza os itens horizontalmente */
+    justify-content: center;
+    /* Centraliza os itens verticalmente */
+    min-height: 100vh;
+    /* Garante altura mínima de 100% da tela */
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* Define o tamanho da fonte do título */
+    font-weight: bold;
+    /* Deixa o texto em negrito */
+    margin-bottom: 2rem;
+    /* Espaço abaixo do título */
+    letter-spacing: 1px;
+    /* Espaçamento entre letras */
+}
+
+section[aria-label="Perfis disponíveis"] {
+    width: 100%;
+    /* Ocupa toda a largura disponível */
+    max-width: 600px;
+    /* Limita a largura máxima */
+    display: flex;
+    /* Usa flexbox */
+    justify-content: center;
+    /* Centraliza os perfis */
+}
+
+nav.profiles {
+    display: flex;
+    /* Usa flexbox para os perfis */
+    gap: 2rem;
+    /* Espaço entre os perfis */
+}
+
+ul {
+    list-style: none; /* Remove o ponto dos itens da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    display: flex; /* Usa flexbox para os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os itens */
+    gap: 1rem; /* Espaço entre os itens */
+}
+
+.profile {
+    text-decoration: none;
+    /* Remove sublinhado dos links */
+    color: #fff;
+    /* Cor do texto dos links */
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Suaviza animações de transformação e sombra */
+}
+
+figure {
+    margin: 0;
+    /* Remove margem padrão */
+    display: flex;
+    /* Usa flexbox */
+    flex-direction: column;
+    /* Organiza em coluna */
+    align-items: center;
+    /* Centraliza itens */
+}
+
+img {
+    width: 120px;
+    /* Largura fixa da imagem */
+    height: 120px;
+    /* Altura fixa da imagem */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    object-fit: cover;
+    /* Mantém proporção da imagem */
+    margin-bottom: 0.5rem;
+    /* Espaço abaixo da imagem */
+    background: #222;
+    /* Cor de fundo da imagem */
+    display: block;
+    /* Exibe como bloco */
+    border: 1px transparent;
+    /* Borda inicial invisível */
+}
+
+img:hover {
+    border: 1px solid #fff;
+    /* Borda branca ao passar o mouse */
+}
+
+figcaption {
+    font-size: 1.1rem;
+    /* Tamanho da fonte da legenda */
+    font-weight: 500;
+    /* Peso da fonte */
+    margin-top: 0.5rem;
+    /* Espaço acima da legenda */
+    letter-spacing: 0.5px;
+    /* Espaçamento entre letras */
+}
+
+/* Light mode */
+body.light-mode {
+    background: #f5f5f5; /* Cor de fundo clara */
+    color: #222; /* Cor do texto escura */
+}
+
+.light-mode .profile {
+    color: #222; /* Links escuros */
+}
+
+.light-mode img {
+    background: #eee; /* Fundo claro para imagens */
+    border: 1px solid #ccc; /* Borda clara */
+}
+
+.light-mode img:hover {
+    border: 1px solid #222; /* Borda escura ao passar o mouse */
+}
+
+
+/* Responsividade para tablets e celulares */
+@media (max-width: 900px) {
+    section[aria-label="Perfis disponíveis"] {
+        max-width: 100%;
+        /* Remove limite de largura */
+        padding: 0 1rem;
+        /* Adiciona espaçamento lateral */
+    }
+
+    nav.profiles {
+        gap: 1rem;
+        /* Reduz espaço entre perfis */
+    }
+
+    img {
+        width: 90px;
+        /* Reduz tamanho da imagem */
+        height: 90px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        /* Reduz tamanho do título */
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        /* aumenta a margem superior para dar mais espaço em telas pequenas */
+        margin-top: 6rem;
+
+        min-height: auto;
+        /* Remove altura mínima */
+        padding: 2rem 0;
+    }
+
+    nav.profiles {
+        flex-direction: column;
+        /* Perfis em coluna */
+        align-items: center;
+    }
+
+    ul {
+        gap: 4rem;
+        /* Aumenta espaço entre itens */
+    }
+}
+
+@media (min-width: 901px) {
+    nav.profiles {
+        flex-direction: row; /* Perfis na horizontal em telas grandes */
+        align-items: center;
+    }
+
+    img {
+        width: 70px;
+        /* Imagem menor */
+        height: 70px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        /* Título menor */
+    }
+
+    figcaption {
+        font-size: 1rem;
+        /* Legenda menor */
+    }
+}
